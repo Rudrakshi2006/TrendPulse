@@ -1,0 +1,3 @@
+"""
+TrendPulse Application
+"""

@@ -1,0 +1,58 @@
+============================================================
+TRENDPULSE - WINDOWS RUN GUIDE
+============================================================
+
+Follow these step-by-step instructions to run TrendPulse on Windows.
+
+------------------------------------------------------------
+Prerequisites:
+------------------------------------------------------------
+1. Python 3: Make sure Python is installed. You can download it from python.org.
+   **IMPORTANT:** During Python installation, check the box that says "Add Python to PATH" or "Add Python.exe to PATH".
+
+------------------------------------------------------------
+Steps to Run:
+------------------------------------------------------------
+
+1. Open Command Prompt (cmd) or PowerShell:
+   - Press the Windows Key, type "cmd" or "PowerShell", and press Enter.
+
+2. Navigate to the unzipped project folder:
+   - Type "cd" followed by the path where you unzipped the folder, for example:
+     cd C:\Users\YourUsername\Downloads\TrendPulse
+     (Change this path to wherever you unzipped the folder)
+
+3. Create a Virtual Environment:
+   python -m venv venv
+
+4. Activate the Virtual Environment:
+   - On Command Prompt (CMD):
+     venv\Scripts\activate
+   - On PowerShell:
+     venv\Scripts\Activate.ps1
+     *(If PowerShell gives a script execution policy error, run: "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process" and try again)*
+
+5. Install Dependencies:
+   pip install -r requirements.txt
+
+6. Configure API Keys:
+   - The project includes a `.env` file containing API keys.
+   - If you need to change them, open `.env` using Notepad or any editor and update the keys:
+     TAVILY_API_KEY=your_key
+     GROQ_API_KEY=your_key
+     GROQ_MODEL=llama-3.3-70b-versatile
+
+7. Run the Application:
+   python -m app.main
+
+------------------------------------------------------------
+Troubleshooting:
+------------------------------------------------------------
+- Error: "python is not recognized as an internal or external command"
+  Solution: Python is not added to your system PATH. Reinstall Python and check the box "Add Python to PATH", or search "Edit the system environment variables" in Windows and add the path of your Python folder to the Path variable.
+
+- Error: "cannot be loaded because running scripts is disabled on this system" (PowerShell only)
+  Solution: Run this command in PowerShell:
+  Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+  And then try activating again.
+============================================================
