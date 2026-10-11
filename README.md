@@ -47,7 +47,7 @@ trendpulse/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/Yashkhadgi/TrendPlus.git
+git clone https://github.com/Rudrakshi2006/TrendPluse.git
 cd trendpulse
 ```
 
